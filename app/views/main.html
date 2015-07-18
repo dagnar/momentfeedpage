@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>Foursquare: Venue Endpoint</h2>
+  <!-- input -->
+  <form role="form" ng-submit="submitZip()">
+    <div class="row">
+      <div class="input-group">
+        <input type='text' class="form-control" ng-model="zip" placeholder="Enter ZIP">
+        <span class="input-group-btn">
+          <input type="submit" class="btn btn-primary" value="Go">
+        </span>
+      </div>
+    </div>
+  </form>
+
+  <div class="panel panel-default">
+    <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+  </div>
+
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Things Nearby</div>
+    <!-- Table -->
+    <table class="table">
+      <tr ng-repeat="result in results">
+        <td>
+          <h6>{{result.name}}</h6>
+        </td>
+      </tr>
+    </table>
+  </div>
+  </div>  
+</div>
+
