@@ -1,39 +1,65 @@
 <div class="container">
-  <h2>Foursquare: Venue Endpoint</h2>
-  <!-- input -->
-  <form role="form" ng-submit="submitZip()">
-    <div class="row">
-      <div class="input-group">
-        <input type='text' class="form-control" ng-model="zip" placeholder="Enter ZIP">
-        <span class="input-group-btn">
-          <input type="submit" class="btn btn-primary" value="Go">
-        </span>
-      </div>
+  <div class="panel panel-default panel-margin-top">
+    <div class="panel-heading">
+      <div class="row">
+        <div class="col-md-8">
+          <h2 class="text-muted">Foursquare: Venues</h2>
+        </div>  
+        <!-- input -->
+        <div class="col-md-4 zip-box">
+          <div class="row">
+            <div class="col-md-2 col-xs-2 label-margin-top text-muted">
+              <label>ZIP</label>
+            </div>
+            <div class="col-md-10 col-xs-10">
+              <form  ng-submit="submitZip()">
+                <div class="input-group">              
+                  <input type='text' class="form-control" id="zip" ng-model="zip" placeholder="Enter ZIP" >
+                  <span class="input-group-btn">
+                    <input type="submit" class="btn btn-primary" value="Go">
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>  
     </div>
-  </form>
+    <div class="panel-body">
 
-  <div class="panel panel-default">
-    <ui-gmap-google-map center='map.center' pan='true' zoom='map.zoom'>
-      <ui-gmap-markers models="markerList" options="'options'" fit='true' coords="'coordinates'">
-        <ui-gmap-windows options="windowOptions">
-          <div style="white-space: nowrap" ng-non-bindable>{{::name}}</div>
-          </ui-gmap-window>
-      </ui-gmap-markers>
-    </ui-gmap-google-map>
-  </div>
 
-  <div class="panel panel-default">
-    <!-- Default panel contents -->
-    <div class="panel-heading">Things Nearby</div>
-    <!-- Table -->
-    <table class="table">
-      <tr ng-repeat="result in markerList">
-        <td>
-          <h6>{{result.name}}</h6>
-        </td>
-      </tr>
-    </table>
+      <div class="panel panel-default">
+        <ui-gmap-google-map center='map.center' pan='true' zoom='map.zoom'>
+          <ui-gmap-markers models="markerList" options="'options'" fit='true' coords="'coordinates'">
+            <ui-gmap-windows options="windowOptions">
+              <div style="white-space: nowrap" ng-non-bindable>{{::name}}</div>
+              </ui-gmap-window>
+          </ui-gmap-markers>
+        </ui-gmap-google-map>
+      </div>
+
+      <div class="panel panel-default">
+        <!-- Table -->
+        <table class="table table-striped">
+          <thead class="bg-info">
+            <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Address</th>
+            </tr>
+          </thead>
+          <tr ng-repeat="result in markerList">
+            <td>
+              <h6>{{result.labelNum}}</h6>
+            </td>
+            <td>
+              <h6>{{result.name}}</h6>
+            </td>
+            <td>
+              <h6>{{result.location.address}}</h6>
+            </td>
+          </tr>
+        </table>
+    </div>
   </div>
-  </div>  
 </div>
-
