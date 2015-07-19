@@ -13,7 +13,13 @@
   </form>
 
   <div class="panel panel-default">
-    <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+    <ui-gmap-google-map center='map.center' pan='true' zoom='map.zoom'>
+      <ui-gmap-markers models="markerList" options="'options'" fit='true' coords="'coordinates'">
+        <ui-gmap-windows options="windowOptions">
+          <div style="white-space: nowrap" ng-non-bindable>{{::name}}</div>
+          </ui-gmap-window>
+      </ui-gmap-markers>
+    </ui-gmap-google-map>
   </div>
 
   <div class="panel panel-default">
@@ -21,7 +27,7 @@
     <div class="panel-heading">Things Nearby</div>
     <!-- Table -->
     <table class="table">
-      <tr ng-repeat="result in results">
+      <tr ng-repeat="result in markerList">
         <td>
           <h6>{{result.name}}</h6>
         </td>

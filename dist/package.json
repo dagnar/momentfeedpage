@@ -1,0 +1,14 @@
+{
+  "name": "momentfeedpage",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.1"
+  },
+  "scripts": {
+    "start": "node web.js"
+  },
+  "author": "",
+  "license": ""
+}
