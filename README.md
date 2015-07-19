@@ -1,12 +1,8 @@
 # moment-feed-page
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.12.1.
+Simple page that calls the Foursquare Venue endpoint.  Enter a ZIP and it will return top 10 results.
 
 ## Build & development
 
 Run `grunt` for building and `grunt serve` for preview.
 
-## Testing
-
-Running `grunt test` will run the unit tests with karma.
