@@ -20,7 +20,7 @@ angular.module('momentFeedPageApp')
 	$scope.zip = '90401';
 
 	$scope.submitZip = function() {
-		var url = "https://api.foursquare.com/v2/venues/search?client_id=2EMFXZ1KTZUBLKRZRM20YF0OBWWGKU4JDWPU0H3JGMMRZH4W&client_secret=Q0G3ZDYJK5KLLAELIYYTBWNHGED4TGJWWF40JU4I5O45AYSA&v=20130815&limit=10&near=" + $scope.zip;
+		var url = "https://api.foursquare.com/v2/venues/search?client_id=2EMFXZ1KTZUBLKRZRM20YF0OBWWGKU4JDWPU0H3JGMMRZH4W&client_secret=Q0G3ZDYJK5KLLAELIYYTBWNHGED4TGJWWF40JU4I5O45AYSA&v=20130815&limit=20&near=" + $scope.zip;
 		
 		var request = $http.get(url);
 		request.then(function(response) {
